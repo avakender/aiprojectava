@@ -1,0 +1,264 @@
+/* ---------- Tokens ---------- */
+:root {
+  --paper: #f2f5f7;
+  --surface: #ffffff;
+  --ink: #11252d;
+  --muted: #465b65;
+  --line: #c5d0d6;
+
+  --fact: #1b6b53;
+  --interp: #2b4ba0;
+  --pred: #6a3c9e;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --measure: 40rem;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+main, .site-header nav, .site-footer {
+  width: min(100% - 2rem, var(--measure));
+  margin-inline: auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: clamp(2.1rem, 6vw, 3.25rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.2rem; margin-top: 1.75rem; }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--interp); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--interp);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+code {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* ---------- Skip link + header ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { top: 0.75rem; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.site-header a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-header a:hover { border-bottom-color: var(--line); }
+.site-header a[aria-current="true"] { border-bottom-color: var(--ink); font-weight: 600; }
+
+/* ---------- Sections ---------- */
+section { padding: 2.5rem 0 0.5rem; }
+
+.hero { padding-top: 3rem; }
+.lead { font-size: 1.2rem; color: var(--muted); }
+
+/* ---------- Claim labels: the page's main device ---------- */
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  margin-right: 0.4rem;
+  white-space: nowrap;
+}
+.tag.fact { background: var(--fact); }
+.tag.interp { background: var(--interp); }
+.tag.pred { background: var(--pred); }
+
+.claim {
+  background: var(--surface);
+  border-left: 5px solid var(--line);
+  padding: 0.85rem 1rem;
+  margin: 1.25rem 0;
+}
+.claim.fact { border-left-color: var(--fact); }
+.claim.interp { border-left-color: var(--interp); }
+.claim.pred { border-left-color: var(--pred); }
+
+.key {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+  margin-top: 1.75rem;
+}
+.key h2 { font-size: 1rem; font-family: var(--font-body); margin-bottom: 0.5rem; }
+.key dl { margin: 0; }
+.key div { display: flex; gap: 0.75rem; align-items: baseline; padding: 0.2rem 0; }
+.key dt { flex: 0 0 8.5rem; }
+.key dd { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Diagram: ordered list as flow ---------- */
+.flow {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.flow li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  padding: 0.75rem 1rem;
+}
+
+.flow li:not(:last-child)::after {
+  content: "↓";
+  position: absolute;
+  left: 1.2rem;
+  bottom: -1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  color: var(--muted);
+}
+
+.flow strong { display: block; font-family: var(--font-display); font-size: 1.1rem; }
+.flow span { color: var(--muted); font-size: 0.95rem; }
+
+.flow li.check {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.flow li.check span { color: #dbe5ea; }
+
+/* Wider screens: lay the flow out left to right */
+@media (min-width: 62rem) {
+  main { width: min(100% - 2rem, 62rem); }
+  main > section > p,
+  main > section > .claim,
+  main > section > ul,
+  main > section > dl,
+  main > section > h2,
+  main > section > h3,
+  main > section > article,
+  main > .hero > * { max-width: var(--measure); }
+
+  .flow { grid-template-columns: repeat(5, 1fr); gap: 1.4rem; }
+  .flow li:not(:last-child)::after {
+    content: "→";
+    left: auto;
+    right: -1.3rem;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .flow strong { font-size: 1rem; }
+  .flow span { font-size: 0.85rem; }
+}
+
+/* ---------- Lists and definitions ---------- */
+.plain { padding-left: 1.2rem; margin: 0 0 1rem; }
+.plain li { margin-bottom: 0.5rem; }
+
+.risks { margin: 1rem 0 1.5rem; }
+.risks div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+}
+.risks div:last-child { border-bottom: 1px solid var(--line); }
+.risks dt { font-weight: 600; }
+.risks dd { margin: 0; }
+
+.case {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 1rem 1.25rem 0.25rem;
+  margin: 1.5rem 0;
+}
+.case h3 { margin-top: 0; }
+
+/* ---------- Sources, process, footer ---------- */
+.sources { padding-left: 1.2rem; }
+.sources li { margin-bottom: 0.4rem; }
+
+.ack {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 30rem) {
+  .key div { flex-direction: column; gap: 0.1rem; }
+  .key dt { flex-basis: auto; }
+  .risks div { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
