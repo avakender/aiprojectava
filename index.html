@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI can write the answer. Someone still has to check it.</title>
+  <meta name="description" content="A short, balanced explainer on artificial intelligence: what it is, where it helps, where it fails and what could come next.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav aria-label="Page sections">
+      <ul>
+        <li><a href="#what">What AI is</a></li>
+        <li><a href="#help">Where it helps</a></li>
+        <li><a href="#risks">Where it fails</a></li>
+        <li><a href="#future">What next</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#process">How this was made</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <h1 id="title">AI can write the answer. Someone still has to check it.</h1>
+      <p class="lead">Artificial intelligence is already in search engines, phones, banks and classrooms. This page explains what it is, what it does well, where it fails, and why human checking matters more as it spreads.</p>
+
+      <aside class="key" aria-labelledby="key-title">
+        <h2 id="key-title">How to read this page</h2>
+        <dl>
+          <div><dt><span class="tag fact">Fact</span></dt><dd>Supported by a source listed below.</dd></div>
+          <div><dt><span class="tag interp">Interpretation</span></dt><dd>My reading of the facts.</dd></div>
+          <div><dt><span class="tag pred">Prediction</span></dt><dd>What might happen. Nobody knows yet.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section id="what" aria-labelledby="what-h">
+      <h2 id="what-h">What AI is</h2>
+      <p>AI is software that performs tasks we usually link to human thinking, such as recognising images, translating languages or writing text. Most modern systems are not given rules to follow. They learn patterns from huge amounts of example data, a method called machine learning.</p>
+
+      <ol class="flow" aria-label="How a machine-learning system is built and used">
+        <li><strong>Data</strong><span>Text, images and records gathered from many sources.</span></li>
+        <li><strong>Training</strong><span>The system adjusts itself until it predicts the patterns well.</span></li>
+        <li><strong>Model</strong><span>A large set of numbers that stores what it learned.</span></li>
+        <li><strong>Output</strong><span>A prediction: the next word, a label, an image.</span></li>
+        <li class="check"><strong>Human check</strong><span>A person tests whether the output is true, fair and safe.</span></li>
+      </ol>
+
+      <p class="claim fact"><span class="tag fact">Fact</span> Chatbots such as ChatGPT and Claude are generative AI. They predict a likely continuation of your text, which makes them fluent but not automatically correct.</p>
+    </section>
+
+    <section id="help" aria-labelledby="help-h">
+      <h2 id="help-h">Where it helps</h2>
+      <ul class="plain">
+        <li><strong>Study and work.</strong> Summarising a reading, explaining a concept a second way, drafting an email or finding a bug in code.</li>
+        <li><strong>Accessibility.</strong> Automatic captions, translation and text-to-speech open content to more people.</li>
+        <li><strong>Health and science.</strong> Tools can flag patterns in scans or sort large research datasets, while specialists make the final decision.</li>
+      </ul>
+      <p class="claim interp"><span class="tag interp">Interpretation</span> The best uses save time on a first draft while a person keeps responsibility for the result.</p>
+    </section>
+
+    <section id="risks" aria-labelledby="risks-h">
+      <h2 id="risks-h">Where it fails</h2>
+      <dl class="risks">
+        <div><dt>Errors</dt><dd>Generative models can state false things with confidence. These mistakes are often called hallucinations.</dd></div>
+        <div><dt>Bias</dt><dd>Systems copy patterns in their training data, including unfair ones.</dd></div>
+        <div><dt>Privacy</dt><dd>Text typed into a tool may be stored or reused under the provider’s terms.</dd></div>
+        <div><dt>Fraud</dt><dd>Synthetic voice and video make impersonation cheaper and more convincing.</dd></div>
+      </dl>
+
+      <article class="case" aria-labelledby="case-h">
+        <h3 id="case-h">Case study: the deepfake video meeting</h3>
+        <p class="claim fact"><span class="tag fact">Fact</span> In early 2024, Hong Kong police said a finance worker joined a video call with what looked like the company’s chief financial officer and colleagues. All the others were deepfakes. He made 15 transfers worth about US$25.6 million. The firm, Arup, later confirmed that fake voices and images were used.</p>
+        <p class="claim interp"><span class="tag interp">Interpretation</span> Seeing a face and hearing a voice is no longer proof of identity. Confirm large payments through a second, known channel.</p>
+      </article>
+    </section>
+
+    <section id="future" aria-labelledby="future-h">
+      <h2 id="future-h">What could come next</h2>
+
+      <article class="case" aria-labelledby="grid-h">
+        <h3 id="grid-h">Case study: AI and the power grid</h3>
+        <p class="claim fact"><span class="tag fact">Fact</span> The International Energy Agency projects that data-centre electricity demand will more than double by 2030, to about 945 terawatt-hours. That is slightly more than Japan uses today.</p>
+        <p class="claim fact"><span class="tag fact">Fact</span> PJM, the largest US grid operator, expects data centres to account for nearly all of the 32 gigawatts of demand growth it forecasts through 2030. It has warned of possible power shortages as early as 2027 unless supply grows.</p>
+        <p class="claim pred"><span class="tag pred">Prediction</span> If new power plants and cables arrive more slowly than demand, bills will rise and local shortages become more likely. Efficiency gains could soften this.</p>
+      </article>
+
+      <h3>Dependence</h3>
+      <p class="claim pred"><span class="tag pred">Prediction</span> When many services rely on a few cloud providers, one outage can stop many things at once. Organisations will need manual fallbacks.</p>
+
+      <h3>Supervision</h3>
+      <p class="claim pred"><span class="tag pred">Prediction</span> AI agents that run code or send messages by themselves make errors travel faster. Approval steps, logs and limits will matter as much as model quality.</p>
+
+      <p class="claim interp"><span class="tag interp">Interpretation</span> The useful question is less “is AI good or bad?” than “who is checking, and could they still do the task without it?”</p>
+    </section>
+
+    <section id="sources" aria-labelledby="sources-h">
+      <h2 id="sources-h">Sources and further reading</h2>
+      <ul class="sources">
+        <li><a href="https://oecd.ai/">OECD.AI, how artificial intelligence works</a></li>
+        <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST, AI Risk Management Framework</a></li>
+        <li><a href="https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works">International Energy Agency, Energy and AI (April 2025)</a></li>
+        <li><a href="https://www.investing.com/news/commodities-news/biggest-us-power-grid-operator-moving-forward-with-plan-to-manage-data-centers-4369117">Reuters, US grid operator PJM moves forward with plan to manage data centers (November 2025)</a></li>
+        <li><a href="https://www.wral.com/archive/21435775/">CNN, Arup confirms it was the target of a deepfake scam (2024)</a></li>
+      </ul>
+    </section>
+
+    <section id="process" aria-labelledby="process-h">
+      <h2 id="process-h">How this website was made</h2>
+      <p>I built the site by hand as three files: <code>index.html</code>, <code>styles.css</code> and a small <code>script.js</code>. I chose a single narrow column because the topic needs reading, not browsing. The coloured Fact, Interpretation and Prediction labels keep evidence apart from opinion, as the assignment asks. The “how AI is built” diagram is an ordered list styled with CSS, so screen readers get real list structure instead of a picture.</p>
+      <p>I used semantic landmarks, a skip link, visible keyboard focus and tested contrast. After testing on a phone I changed the diagram to stack vertically. <code>script.js</code> only marks the current section in the menu, and the page works without it.</p>
+      <p id="ai-ack" class="ack">I acknowledge the use of Claude (claude.ai) to brainstorm the structure and draft starter code. I checked the facts against the sources above, edited the text and tested the site. The final work is my responsibility.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Written for a general audience. Word count under 1,000.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
